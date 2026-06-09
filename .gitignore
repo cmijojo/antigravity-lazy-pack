@@ -54,3 +54,6 @@ images/generated/
 wordcloud-app/
 scratch/
 tmp/
+
+# Local MCP configs
+mcp_config.json

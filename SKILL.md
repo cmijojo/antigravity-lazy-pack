@@ -17,6 +17,7 @@ description: AntiGravity 懶人包 — 服務連接與工作流程設定。說�
 | 04 | `04-draw` | 生圖指引 |
 | 05 | `05-workflow` | 開工 / 收工 / 新專案初始化 |
 | 06 | `06-obsidian` | 連接 Obsidian MCP (MCPVault) |
+| 07 | `07-computer-use` | 連接 Open Computer Use MCP |
 | 00 | `00-install-all` | 一次安裝全部 |
 
 ## 步驟二：讓使用者選擇

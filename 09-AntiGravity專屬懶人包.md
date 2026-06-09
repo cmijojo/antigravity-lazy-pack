@@ -1,10 +1,10 @@
-﻿# Anti-Gravity 懶人包 #09：服務連接與工作流程設定
+# Anti-Gravity 懶人包 #09：服務連接與工作流程設定
 
-> 版本：v1.4
-> 更新日期：2026-05-31
+> 版本：v1.5
+> 更新日期：2026-06-09
 > 語系偏好：繁體中文（Taiwan）
 
-這份懶人包的目標，是讓 Anti-Gravity 使用者能安全連接 NotebookLM、Firebase、GitHub、Obsidian，並建立「開工 / 收工 / 新專案初始化」工作流程。本版本已重新加回了 Obsidian MCPVault 的一鍵整合設定與專屬 Skill。
+這份懶人包的目標，是讓 Anti-Gravity 使用者能安全連接 NotebookLM、Firebase、GitHub、Obsidian、Open Computer Use，並建立「開工 / 收工 / 新專案初始化」工作流程。本版本已加回了 Obsidian MCPVault 的一鍵整合設定，並新增了 Open Computer Use 的一鍵整合。
 
 本文件只放可公開教學的設定流程，不放任何個人 NotebookLM 清單、筆記本 ID、研究報告、生成圖片、帳號 token 或測試專案。
 
@@ -349,6 +349,61 @@ Obsidian vault：
 
 ---
 
+## 七、連接 Open Computer Use
+
+### 重點原則
+
+Open Computer Use 可讓 AI 透過作業系統輔助功能與螢幕錄影權限控制電腦。由於安全風險較高，請只在信任的專案中開啟，並注意本機權限的管理。
+
+### 安裝 Open Computer Use
+
+```powershell
+npm install -g open-computer-use
+```
+
+### 授權與權限檢查
+
+由於 macOS 的安全機制，需要開啟「輔助功能」與「螢幕錄影」權限。請執行以下指令以檢查狀態：
+
+```powershell
+open-computer-use doctor
+```
+
+並依照畫面提示在系統偏好設定中完成授權。
+
+### 註冊 MCP
+
+請依 Anti-Gravity 實際 MCP 設定方式加入設定檔：
+
+```json
+{
+  "mcp": {
+    "computer-use": {
+      "type": "local",
+      "command": ["open-computer-use", "mcp"],
+      "enabled": true
+    }
+  }
+}
+```
+
+或者使用全域完整路徑：
+
+```json
+{
+  "mcpServers": {
+    "computer-use": {
+      "command": "/opt/homebrew/bin/open-computer-use",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+完成後重啟 Anti-Gravity 測試其讀取螢幕與模擬按鍵的功能。
+
+---
+
 ## 完成回報格式
 
 ```markdown
@@ -358,6 +413,7 @@ Obsidian vault：
 - GitHub：已登入 / 待登入 / 失敗
 - Firebase：已登入 / 待登入 / 未使用
 - Obsidian：已連接 / 待設定 / 失敗
+- Computer Use：已連接 / 待授權 / 失敗
 - 規則檔：ANTIGRAVITY.md 已建立 / 已更新 / 未建立
 - Git 狀態：乾淨 / 有未提交變更
 - 下一步：
@@ -384,6 +440,7 @@ Obsidian vault：
 
 | 日期 | 版本 | 更新內容 |
 |---|---|---|
+| 2026-06-09 | v1.5 | 新增 Open Computer Use 電腦控制整合與 Skill，更新版本資訊與 MCP 設定檔說明 |
 | 2026-05-31 | v1.4 | 重新加回 Obsidian MCPVault 設定與開工/收工自動化流程，並加入獨立 Skill 目錄 |
 | 2026-05-24 | v1.2 | 移除 Obsidian MCPVault 安裝與 MCP 註冊，保留 Obsidian 作為人工專案筆記工作流 |
 | 2026-05-23 | v1.1 | 移除 NotebookLM 個人資料與成果檔定位，改正 NotebookLM OAuth、Obsidian MCP、Git 收工安全流程 |
