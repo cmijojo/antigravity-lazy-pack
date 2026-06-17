@@ -5,6 +5,7 @@
 ## 目前檔案
 
 - `09-AntiGravity專屬懶人包.md`：主懶人包，整理 NotebookLM、Firebase、GitHub、Obsidian、Open Computer Use 與開工 / 收工 / 新專案初始化流程。
+- `10-AntiGravity專屬懶人包.md`：影片字幕與字卡工作流懶人包，整理音訊轉字幕、比對原稿優化字幕、設計字卡標註與生成社群媒體貼文。
 - `.gitignore`：排除本機設定、NotebookLM 匯出、生成圖片、測試 app、API key 與暫存資料。
 
 ## 使用方式
@@ -18,7 +19,7 @@
 請讀取 repo 內容，列出所有可用的懶人包，問我要裝哪些。
 ```
 
-AI 會自動讀取 `SKILL.md`（安裝入口），列出 6 個技能，問你要裝哪些，然後自動安裝。
+AI 會自動讀取 `SKILL.md`（安裝入口），列出所有可用的技能（共 13 個），問你要裝哪些，然後自動安裝。
 
 ### 方式二：手動開啟 MD 檔
 

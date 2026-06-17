@@ -14,6 +14,12 @@ description: 一次安裝所有 AntiGravity 懶人包技能。說「全部安裝
 5. **05-workflow** — 開工/收工/初始化
 6. **06-obsidian** — 連接 Obsidian (MCPVault)
 7. **07-computer-use** — 連接 Open Computer Use MCP
+8. **08-designer-taste-pro** — 頂尖設計審美與微動效規範
+9. **09-audio-to-srt** — 音訊轉字幕 (Whisper)
+10. **10-srt-enhancer** — 字幕比對原稿優化
+11. **11-srt-card-annotator** — 字幕字卡智慧標註
+12. **12-srt-social-summary** — 社群媒體推廣文案生成
+13. **13-video-workflow** — 影片字幕與字卡完整工作流
 
 每完成一個報告進度，最終回報總表。
 已安裝的工具自動跳過。
