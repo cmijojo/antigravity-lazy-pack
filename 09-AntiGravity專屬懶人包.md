@@ -1,7 +1,7 @@
 # Anti-Gravity 懶人包 #09：服務連接與工作流程設定
 
-> 版本：v1.5
-> 更新日期：2026-06-09
+> 版本：v1.6
+> 更新日期：2026-06-27
 > 語系偏好：繁體中文（Taiwan）
 
 這份懶人包的目標，是讓 Anti-Gravity 使用者能安全連接 NotebookLM、Firebase、GitHub、Obsidian、Open Computer Use，並建立「開工 / 收工 / 新專案初始化」工作流程。本版本已加回了 Obsidian MCPVault 的一鍵整合設定，並新增了 Open Computer Use 的一鍵整合。
@@ -433,6 +433,8 @@ open-computer-use doctor
 | PowerShell 擋 `npm.ps1` / `npx.ps1` | 改用 `npm.cmd` / `npx.cmd` |
 | Obsidian 找不到 vault | 搜尋含 `.obsidian` 的資料夾，請使用者確認真正使用的 vault |
 | 收工會納入太多檔案 | 先看 `git status` 與 diff，只 stage 本次相關檔案 |
+| 瀏覽器工具提示 `Remote Debugging Required` | 在 Chrome 網址列前往 `chrome://inspect/#remote-debugging` 並勾選 `Allow remote debugging for this browser instance`；或者以偵錯埠啟動 Chrome：`/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir="/tmp/chrome-remote-profile"` |
+| `MCP Proxy` 顯示 `Socket connection error: connect ENOENT` | 代表背景殘留舊版殭屍程序。請在終端機執行 `pkill -f "mcp_proxy_bundle.js" && pkill -f "chrome-devtools-mcp"` 清除殘留程序，然後重啟/重新載入 IDE 即可 |
 
 ---
 
@@ -440,6 +442,7 @@ open-computer-use doctor
 
 | 日期 | 版本 | 更新內容 |
 |---|---|---|
+| 2026-06-27 | v1.6 | 新增 Antigravity 2.0 瀏覽器偵錯啟用與 MCP Proxy Socket 連線錯誤解法至常見問題 |
 | 2026-06-09 | v1.5 | 新增 Open Computer Use 電腦控制整合與 Skill，更新版本資訊與 MCP 設定檔說明 |
 | 2026-05-31 | v1.4 | 重新加回 Obsidian MCPVault 設定與開工/收工自動化流程，並加入獨立 Skill 目錄 |
 | 2026-05-24 | v1.2 | 移除 Obsidian MCPVault 安裝與 MCP 註冊，保留 Obsidian 作為人工專案筆記工作流 |
